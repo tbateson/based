@@ -1,7 +1,7 @@
 FROM amd64/alpine:3
 
 RUN apk update
-RUN apk add build-base go
+RUN apk add build-base git go
 RUN gcc --version && g++ --version && go version
 
 ARG NATS_SERVER_VERSION=2.9.8
