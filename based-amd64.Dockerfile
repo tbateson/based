@@ -1,6 +1,6 @@
 FROM amd64/alpine:3
 
-RUN apk add --no-cache build-base glib-dev clang git go
+RUN apk add --no-cache build-base glib-dev clang llvm git go
 RUN gcc --version && g++ --version && go version && clang++ --version && printf "#include <linux/version.h>\nint main() { return 0; }" > main.cpp && clang++ main.cpp && rm -rf main.cpp
 
 ARG NATS_SERVER_VERSION=2.9.8
